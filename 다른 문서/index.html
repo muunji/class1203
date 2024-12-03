@@ -1,0 +1,25 @@
+<!-- server.js를 실행해둔 상태에서 -> 다른 폴더에서 실행 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+        const myEmail = new XMLHttpRequest();
+    myEmail.open("GET", "http://localhost:9010", true);
+    myEmail.onreadystatechange = function() {
+      if (myEmail.readyState === 4 && myEmail.status === 200) {
+        // 서버로부터 응답을 성공적으로 받았을 때 실행할 코드
+        const response = JSON.parse(myEmail.responseText);
+        console.log(response);
+        root.innerHTML = response.email; // 응답 데이터를 화면에 표시
+      }
+    };
+    myEmail.send();
+  </script>
+</body>
+</html>

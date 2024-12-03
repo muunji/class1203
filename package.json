@@ -1,0 +1,12 @@
+{
+  "name": "class1203",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/muunji/class1203.git",
+  "author": "muunji <twoji3019@naver.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
